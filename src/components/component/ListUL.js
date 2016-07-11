@@ -19,14 +19,15 @@ class ListUL extends Component {
         onChgEvt(pos, id);
     }
     render() {
+        let _this = this;
         const { data, on } = this.props;
         return (
             <div className={this._setClassName()}>
                 <div className="list-item-border">
                    <ul className="item-ul">
-                        {data.map((post, i) => 
-                            <ListItems id={i} key={i} isbn={post.isbn} onChg={this._onChg}/>
-                        )}
+                        {Object.keys(data).map(function(item, key) {
+                            return <ListItems key={key} id={item} onChg={_this._onChg}/>;
+                        })}
                     </ul> 
                 </div>
             </div>
@@ -36,7 +37,7 @@ class ListUL extends Component {
 
 ListUL.propTypes = {
     pos      : PropTypes.string.isRequired,
-    data     : PropTypes.array.isRequired,
+    data     : PropTypes.object.isRequired,
     onChgEvt : PropTypes.func.isRequired
 };
 

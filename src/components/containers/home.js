@@ -32,8 +32,8 @@ class Home extends Component {
 };
 
 Home.propTypes = {
-    list      : PropTypes.array.isRequired,
-    listOut   : PropTypes.array.isRequired,
+    list      : PropTypes.object.isRequired,
+    listOut   : PropTypes.object.isRequired,
     isPending : PropTypes.bool.isRequired,
     getAPI    : PropTypes.func.isRequired,
     movePool  : PropTypes.func.isRequired

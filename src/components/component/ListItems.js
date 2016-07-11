@@ -9,9 +9,9 @@ class ListItems extends Component {
         onChg(id);
     }
     render() {
-        const { isbn }= this.props;
+        const { id }= this.props;
         return (
-            <li className="item-li">{isbn}
+            <li className="item-li">{id}
                 <button className="chg-btn" onClick={this._onChnage}></button>
             </li>
         );
@@ -19,8 +19,7 @@ class ListItems extends Component {
 };
 
 ListItems.propTypes = {
-    id   : PropTypes.number.isRequired,
-    isbn : PropTypes.number.isRequired,
+    id   : PropTypes.string.isRequired,
     onChg: PropTypes.func.isRequired
 };
 
