@@ -34,3 +34,11 @@ export function getAPI() {
     };
 }
 
+/* List: 移動到另一個 array pool */
+export const movePool = (pos, id) => {
+    return {
+        type: types.MOVE_TO_POOL,
+        pos,
+        id
+    }
+}

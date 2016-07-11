@@ -62,9 +62,10 @@ ul ,li {
 .item-ul {
     border     : 1px solid #666;
     box-sizing : border-box;
-    min-height : 400px;
+    height     : 370px;
     padding-top: 40px;
     position   : relative;
+    overflow-y : scroll;
 
     &:before {
         content       :"ISBN";

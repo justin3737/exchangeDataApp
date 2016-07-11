@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classNames from 'classnames';
-import ListItems from './ListItems';
+import ListItems from '../component/ListItems';
 
 class ListUL extends Component {
     constructor() {
@@ -14,14 +14,18 @@ class ListUL extends Component {
             'right': (pos=='right')
         });
     }
+    _onChg = (id) => {
+        const { pos, onChgEvt } = this.props;
+        onChgEvt(pos, id);
+    }
     render() {
-        const { data } = this.props;
+        const { data, on } = this.props;
         return (
             <div className={this._setClassName()}>
                 <div className="list-item-border">
                    <ul className="item-ul">
                         {data.map((post, i) => 
-                            <ListItems key={i} isbn={post.isbn} />
+                            <ListItems id={i} key={i} isbn={post.isbn} onChg={this._onChg}/>
                         )}
                     </ul> 
                 </div>
@@ -32,7 +36,8 @@ class ListUL extends Component {
 
 ListUL.propTypes = {
     pos      : PropTypes.string.isRequired,
-    data     : PropTypes.array.isRequired
+    data     : PropTypes.array.isRequired,
+    onChgEvt : PropTypes.func.isRequired
 };
 
 export default ListUL;
