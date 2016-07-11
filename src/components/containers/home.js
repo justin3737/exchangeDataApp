@@ -4,11 +4,13 @@ import { connect } from 'react-redux';
 
 import { getAPI } from 'actions/list';
 
+import ListUL from '../component/ListUL';
+
 class Home extends Component {
     constructor() {
         super();
     }
-    _onFetchHandler = () => {
+    componentDidMount() {
         this.props.getAPI();
     }
     render() {
@@ -17,19 +19,9 @@ class Home extends Component {
             isPending
         } = this.props;
         return (
-            <div>
-                <div>
-                    <button
-                        type="button"
-                        onClick={this._onFetchHandler} >
-                        getAPI!
-                    </button>
-                    <ul>
-                        {list.map((post, i) =>
-                          <li key={i}>{post.isbn}</li>
-                        )}
-                    </ul>
-                </div>
+            <div className="container">
+                <ListUL pos="left" data={list}/>
+                <ListUL pos="right" data={list}/>
             </div>
         );
     };

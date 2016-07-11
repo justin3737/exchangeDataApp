@@ -1,4 +1,4 @@
-Exchange Data
+Exchange Data App
 ===
 ### Description
 - use react with redux data flow finished a project.
