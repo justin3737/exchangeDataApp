@@ -41,6 +41,8 @@ Home.propTypes = {
 
 export default connect(
     state => ({
+        listKeysLength: state.list.listKeysLength,
+        listOutKeysLength: state.list.listOutKeysLength,
         list      : state.list.list,
         listOut   : state.list.listOut,
         isPending : state.list.isPending
