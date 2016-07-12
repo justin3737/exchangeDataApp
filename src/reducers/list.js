@@ -3,6 +3,8 @@ import * as types from '../constants/ActionTypes';
 let initialState = {
     list      : {},
     listOut   : {},
+    listKeysLength: 0,
+    listOutKeysLength: 0,
     isPending : false
 };
 
@@ -15,7 +17,7 @@ const list = (state = initialState, action) => {
             };
         case types.FETCH_SUCCESSED:
             let data = {};
-            for (var item of action.data) { 
+            for (var item of action.data) {
                 data[item.isbn] = item.name;
             }
             return {
@@ -31,12 +33,14 @@ const list = (state = initialState, action) => {
                 delete list[id];
             } else {
                 list[id] = listOut[id];
-                delete listOut[id];  
+                delete listOut[id];
             }
             return {
                 ...state,
                 list,
-                listOut
+                listKeysLength: Object.keys(list).length,
+                listOut,
+                listOutKeysLength: Object.keys(listOut).length,
             };
         default:
             return state;
