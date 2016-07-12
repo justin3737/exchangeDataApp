@@ -1,15 +1,14 @@
 Exchange Data App
 ===
 ### Description
-- use react with redux data flow finished a project.
-- run test rest api to get json data and display in the project.
-- use app's ui to exchange data.
+- This is a test project using react and redux data flow.
+- Run test rest api to get json data and display in the project.
+- Use app's ui to exchange data.
 
 ### Usage
 Step.0 安裝套件
 ```
 npm install
-
 ```
 
 Step.1 起服務server
