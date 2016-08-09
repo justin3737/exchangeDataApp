@@ -17,7 +17,7 @@ Step.1 起服務server
 npm run server
 ```
 
-Step.2 起專案
+Step.2 開啟新的Terminal (command + T)接著起專案
 
 ```
 npm run start
